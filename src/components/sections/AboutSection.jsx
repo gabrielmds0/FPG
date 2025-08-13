@@ -1,17 +1,19 @@
 import React from 'react';
-import { CheckCircle, Award, Users, Zap, GraduationCap, Stethoscope } from 'lucide-react';
+import { CheckCircle, Stethoscope } from 'lucide-react';
 import Container from '../common/Container';
 
 const AboutSection = () => {
   const founders = [
     {
       name: 'Dr. Ian Camilo',
+      image: 'https://placehold.co/600x400?text=Dr.+Ian+Camilo',
       credentials: 'Médico pós-graduado em Medicina de Emergência e Cardiologia',
       role: 'Professor universitário e criador do método RPP',
       specialties: ['Raciocínio, Prescrição e Procedimento', 'Medicina de Emergência', 'Cardiologia']
     },
     {
       name: 'Dr. Rodrigo Cleto',
+      image: 'https://placehold.co/600x400?text=Dr.+Rodrigo+Cleto',
       credentials: 'Médico com mais de 20 anos de experiência como coordenador de UTI',
       role: 'Especialista em Clínica Médica, Cardiologia e Terapia Intensiva',
       specialties: ['Instrutor de ACLS/BLS pela AHA', 'Decisões clínicas de alta complexidade', 'Coordenação de UTI']
@@ -44,28 +46,35 @@ const AboutSection = () => {
 
           <div className="grid lg:grid-cols-2 gap-12">
             {founders.map((founder, index) => (
-              <div key={index} className="bg-white rounded-2xl p-8 shadow-lg">
-                <div className="flex items-center mb-6">
-                  <div className="bg-red-100 p-3 rounded-full mr-4">
-                    <Stethoscope className="h-8 w-8 text-red-600" />
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-bold text-gray-900">{founder.name}</h3>
-                    <p className="text-red-600 font-semibold">{founder.role}</p>
-                  </div>
-                </div>
-                
-                <p className="text-gray-700 mb-6 leading-relaxed">
-                  {founder.credentials}
-                </p>
-                
-                <div className="space-y-3">
-                  {founder.specialties.map((specialty, idx) => (
-                    <div key={idx} className="flex items-center">
-                      <CheckCircle className="h-5 w-5 text-green-500 mr-3 flex-shrink-0" />
-                      <span className="text-gray-700">{specialty}</span>
+              <div key={index} className="bg-white rounded-2xl shadow-lg overflow-hidden">
+                <img
+                  src={founder.image}
+                  alt={`Foto de ${founder.name}`}
+                  className="w-full h-64 object-cover"
+                />
+                <div className="p-8">
+                  <div className="flex items-center mb-6">
+                    <div className="bg-red-100 p-3 rounded-full mr-4">
+                      <Stethoscope className="h-8 w-8 text-red-600" />
                     </div>
-                  ))}
+                    <div>
+                      <h3 className="text-2xl font-bold text-gray-900">{founder.name}</h3>
+                      <p className="text-red-600 font-semibold">{founder.role}</p>
+                    </div>
+                  </div>
+
+                  <p className="text-gray-700 mb-6 leading-relaxed">
+                    {founder.credentials}
+                  </p>
+
+                  <div className="space-y-3">
+                    {founder.specialties.map((specialty, idx) => (
+                      <div key={idx} className="flex items-center">
+                        <CheckCircle className="h-5 w-5 text-green-500 mr-3 flex-shrink-0" />
+                        <span className="text-gray-700">{specialty}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             ))}
