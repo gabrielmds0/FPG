@@ -7,8 +7,16 @@ const HeroSection = () => {
   return (
     <>
       {/* Hero Section */}
-      <section id="home" className="bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white py-20 lg:py-32">
-        <Container>
+      
+     <section id="home"
+        className="relative bg-cover bg-center text-white py-20 lg:py-32"
+        style={{ backgroundImage: "url('/hero.jpg')",
+           backgroundPosition: "center 90%"
+        }}
+      >
+        <div className="absolute inset-0 bg-gray-900/70" />
+        <Container className="relative z-10">
+          {/* conteúdo existente */}
           <div className="text-center max-w-5xl mx-auto">
             {/* Tagline */}
             <p className="text-primary font-semibold text-lg tracking-wide uppercase mb-6">
