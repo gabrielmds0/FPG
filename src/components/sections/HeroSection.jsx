@@ -2,6 +2,7 @@ import React from 'react';
 import { ArrowRight, Play, Heart, Users, Target, Award } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Container from '../common/Container';
+import LeadFormModal from '../common/LeadFormModal';
 
 const HeroSection = () => {
   return (
@@ -34,13 +35,17 @@ const HeroSection = () => {
 
             {/* CTA Button */}
             <div className="mb-8">
-              <Button
-                size="lg"
-                className="bg-primary hover:bg-primary/90 text-background px-12 py-6 text-xl font-semibold group shadow-2xl transform hover:scale-105 transition-all duration-300"
-              >
-                Quero garantir minha inscrição
-                <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-1 transition-transform" />
-              </Button>
+              <LeadFormModal
+                trigger={
+                  <Button
+                    size="lg"
+                    className="bg-red-600 hover:bg-red-700 text-white px-12 py-6 text-xl font-semibold group shadow-2xl transform hover:scale-105 transition-all duration-300"
+                  >
+                    Quero garantir minha inscrição
+                    <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                }
+              />
             </div>
           </div>
         </Container>

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ChevronDown, ChevronUp, HelpCircle } from 'lucide-react';
 import Container from '../common/Container';
+import LeadFormModal from '../common/LeadFormModal';
 
 const FAQSection = () => {
   const [openIndex, setOpenIndex] = useState(null);
@@ -107,12 +108,20 @@ const FAQSection = () => {
               Nossa equipe está pronta para esclarecer todas as suas questões sobre a formação.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-red-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
-                Falar com Especialista
-              </button>
-              <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-red-600 transition-colors">
-                Enviar Mensagem
-              </button>
+              <LeadFormModal
+                trigger={
+                  <button className="bg-white text-red-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                    Falar com Especialista
+                  </button>
+                }
+              />
+              <LeadFormModal
+                trigger={
+                  <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-red-600 transition-colors">
+                    Enviar Mensagem
+                  </button>
+                }
+              />
             </div>
           </div>
         </div>

@@ -11,6 +11,7 @@ import {
   Target
 } from 'lucide-react';
 import Container from '../common/Container';
+import LeadFormModal from '../common/LeadFormModal';
 
 const FeaturesSection = () => {
   const experiences = [
@@ -134,9 +135,13 @@ const FeaturesSection = () => {
               Não perca a oportunidade de transformar sua prática médica. 
               Vagas limitadas para garantir a qualidade da experiência.
             </p>
-            <button className="bg-white text-red-600 px-12 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors shadow-lg">
-              Quero me tornar aluno
-            </button>
+            <LeadFormModal
+              trigger={
+                <button className="bg-white text-red-600 px-12 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors shadow-lg">
+                  Quero me tornar aluno
+                </button>
+              }
+            />
           </div>
         </div>
       </Container>
