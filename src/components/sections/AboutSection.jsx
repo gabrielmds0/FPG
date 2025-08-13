@@ -50,7 +50,7 @@ const AboutSection = () => {
                 <img
                   src={founder.image}
                   alt={`Foto de ${founder.name}`}
-                  className="w-full h-64 object-cover"
+                  className="w-full h-90 object-cover"
                 />
                 <div className="p-8">
                   <div className="flex items-center mb-6">

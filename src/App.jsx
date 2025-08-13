@@ -5,7 +5,6 @@ import FeaturesSection from './components/sections/FeaturesSection';
 import TestimonialsSection from './components/sections/TestimonialsSection';
 import FAQSection from './components/sections/FAQSection';
 import CTASection from './components/sections/CTASection';
-import Footer from './components/sections/Footer';
 import './App.css';
 
 function App() {
@@ -16,10 +15,10 @@ function App() {
         <AboutSection />
         <FeaturesSection />
         <TestimonialsSection />
-        <FAQSection />
         <CTASection />
+        <FAQSection />
+        
       </main>
-      <Footer />
     </div>
   );
 }
