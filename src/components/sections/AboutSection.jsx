@@ -31,40 +31,43 @@ const AboutSection = () => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-gray-50">
+    <section id="about" className="py-16 sm:py-24 bg-gray-50">
       <Container>
         {/* Quem está por trás da Formação */}
-        <div className="mb-20">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+        <div className="mb-16 sm:mb-20">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
               Quem está por trás da <span className="text-red-600">Formação</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              A Liberdade Médica nasceu da vivência prática de dois médicos que atuam todos os dias 
+            <p className="text-base sm:text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              A Liberdade Médica nasceu da vivência prática de dois médicos que atuam todos os dias
               na linha de frente do atendimento a pacientes graves.
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12">
+          <div className="grid gap-8 lg:grid-cols-2 lg:gap-12">
             {founders.map((founder, index) => (
-              <div key={index} className="bg-white rounded-2xl shadow-lg overflow-hidden">
+              <div
+                key={index}
+                className="bg-white rounded-2xl shadow-lg overflow-hidden transition-transform hover:shadow-xl hover:-translate-y-1"
+              >
                 <img
                   src={founder.image}
                   alt={`Foto de ${founder.name}`}
-                  className="w-full h-64 object-cover"
+                  className="w-full h-48 sm:h-64 object-cover"
                 />
-                <div className="p-8">
-                  <div className="flex items-center mb-6">
+                <div className="p-6 sm:p-8">
+                  <div className="flex items-center mb-4 sm:mb-6">
                     <div className="bg-red-100 p-3 rounded-full mr-4">
                       <Stethoscope className="h-8 w-8 text-red-600" />
                     </div>
                     <div>
-                      <h3 className="text-2xl font-bold text-gray-900">{founder.name}</h3>
+                      <h3 className="text-xl sm:text-2xl font-bold text-gray-900">{founder.name}</h3>
                       <p className="text-red-600 font-semibold">{founder.role}</p>
                     </div>
                   </div>
 
-                  <p className="text-gray-700 mb-6 leading-relaxed">
+                  <p className="text-gray-700 mb-4 sm:mb-6 leading-relaxed">
                     {founder.credentials}
                   </p>
 
@@ -82,10 +85,10 @@ const AboutSection = () => {
           </div>
 
           {/* Missão */}
-          <div className="mt-16 bg-gradient-to-r from-red-600 to-red-700 rounded-2xl p-12 text-white text-center">
-            <h3 className="text-3xl font-bold mb-6">Nossa Missão</h3>
-            <p className="text-xl leading-relaxed max-w-4xl mx-auto opacity-95">
-              Preparar milhares de médicos para atuar com <strong>segurança, clareza e confiança</strong> onde mais importa: 
+          <div className="mt-12 sm:mt-16 bg-gradient-to-r from-red-600 to-red-700 rounded-2xl p-8 sm:p-12 text-white text-center">
+            <h3 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6">Nossa Missão</h3>
+            <p className="text-base sm:text-xl leading-relaxed max-w-4xl mx-auto opacity-95">
+              Preparar milhares de médicos para atuar com <strong>segurança, clareza e confiança</strong> onde mais importa:
               na vida real. Combinando didática, realismo clínico e supervisão de perto.
             </p>
           </div>
@@ -93,19 +96,22 @@ const AboutSection = () => {
 
         {/* Para quem é essa formação */}
         <div>
-          <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
               Para quem é essa <span className="text-red-600">Formação?</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              Essa formação é para o médico que quer dominar os momentos mais críticos do plantão, 
+            <p className="text-base sm:text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              Essa formação é para o médico que quer dominar os momentos mais críticos do plantão,
               com preparo técnico, raciocínio rápido e segurança nos procedimentos.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 sm:gap-6 mb-12">
             {targetAudience.map((audience, index) => (
-              <div key={index} className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+              <div
+                key={index}
+                className="bg-white rounded-xl p-5 sm:p-6 shadow-lg transition-all hover:-translate-y-1 hover:shadow-xl"
+              >
                 <div className="flex items-center">
                   <CheckCircle className="h-6 w-6 text-red-600 mr-3 flex-shrink-0" />
                   <span className="text-gray-800 font-medium">{audience}</span>
@@ -115,16 +121,16 @@ const AboutSection = () => {
           </div>
 
           {/* Call to Action */}
-          <div className="bg-white rounded-2xl p-8 shadow-lg text-center">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">
+          <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-lg text-center">
+            <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">
               Acelere o que levaria meses ou anos para conquistar sozinho
             </h3>
-            <p className="text-lg text-gray-600 mb-8">
+            <p className="text-base sm:text-lg text-gray-600 mb-8">
               Chega de improviso. Em dois dias, você pode sair do medo e entrar no plantão com segurança real.
             </p>
             <LeadFormModal
               trigger={
-                <button className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors">
+                <button className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-lg font-semibold text-lg transition-colors">
                   Quero garantir minha vaga
                 </button>
               }
