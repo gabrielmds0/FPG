@@ -7,36 +7,36 @@ const HeroSection = () => {
   return (
     <>
       {/* Hero Section */}
-      <section id="home" className="bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white py-20 lg:py-32">
+      <section id="home" className="bg-gradient-to-br from-[#161616] via-[#161616] to-primary text-background py-20 lg:py-32">
         <Container>
           <div className="text-center max-w-5xl mx-auto">
             {/* Tagline */}
-            <p className="text-red-400 font-semibold text-lg tracking-wide uppercase mb-6">
+            <p className="text-primary font-semibold text-lg tracking-wide uppercase mb-6">
               Aprenda a dominar a sala vermelha
             </p>
             
             {/* Main Title */}
             <h1 className="text-4xl lg:text-7xl font-bold leading-tight mb-8">
               Formação em
-              <span className="text-red-500"> Paciente Grave</span>
+              <span className="text-primary"> Paciente Grave</span>
             </h1>
             
             {/* Subtitle */}
-            <h2 className="text-2xl lg:text-4xl font-semibold text-gray-300 mb-8">
+            <h2 className="text-2xl lg:text-4xl font-semibold text-background/80 mb-8">
               Dois dias de prática para dominar a sala vermelha
             </h2>
             
             {/* Description */}
-            <p className="text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto mb-12">
+            <p className="text-xl text-background/80 leading-relaxed max-w-3xl mx-auto mb-12">
               Imersão presencial intensiva e prática para médicos que querem dominar os momentos 
               mais críticos do plantão, com preparo técnico, raciocínio rápido e segurança nos procedimentos.
             </p>
 
             {/* CTA Button */}
             <div className="mb-8">
-              <Button 
-                size="lg" 
-                className="bg-red-600 hover:bg-red-700 text-white px-12 py-6 text-xl font-semibold group shadow-2xl transform hover:scale-105 transition-all duration-300"
+              <Button
+                size="lg"
+                className="bg-primary hover:bg-primary/90 text-background px-12 py-6 text-xl font-semibold group shadow-2xl transform hover:scale-105 transition-all duration-300"
               >
                 Quero garantir minha inscrição
                 <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-1 transition-transform" />

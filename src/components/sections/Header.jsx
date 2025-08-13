@@ -15,15 +15,15 @@ const Header = () => {
   ];
 
   return (
-    <header className="bg-white shadow-sm border-b border-gray-100 sticky top-0 z-50">
+    <header className="bg-background shadow-sm border-b border-[#161616] sticky top-0 z-50">
       <Container>
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center space-x-2">
-            <div className="bg-red-600 p-2 rounded-lg">
-              <Heart className="h-6 w-6 text-white" />
+            <div className="bg-primary p-2 rounded-lg">
+              <Heart className="h-6 w-6 text-background" />
             </div>
-            <span className="text-xl font-bold text-gray-900">Liberdade Médica</span>
+            <span className="text-xl font-bold text-foreground">Liberdade Médica</span>
           </div>
 
           {/* Desktop Navigation */}
@@ -32,7 +32,7 @@ const Header = () => {
               <a
                 key={item.label}
                 href={item.href}
-                className="text-gray-700 hover:text-red-600 transition-colors duration-200 font-medium"
+                className="text-foreground hover:text-primary transition-colors duration-200 font-medium"
               >
                 {item.label}
               </a>
@@ -41,7 +41,7 @@ const Header = () => {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Button className="bg-red-600 hover:bg-red-700 text-white px-6 py-2">
+            <Button className="bg-primary hover:bg-primary/90 text-background px-6 py-2">
               Quero garantir minha inscrição
             </Button>
           </div>
@@ -50,7 +50,7 @@ const Header = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-gray-700 hover:text-red-600 transition-colors"
+              className="text-foreground hover:text-primary transition-colors"
             >
               {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
@@ -59,19 +59,19 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-gray-100">
+          <div className="md:hidden py-4 border-t border-[#161616]">
             <nav className="flex flex-col space-y-4">
               {navItems.map((item) => (
                 <a
                   key={item.label}
                   href={item.href}
-                  className="text-gray-700 hover:text-red-600 transition-colors duration-200 font-medium"
+                  className="text-foreground hover:text-primary transition-colors duration-200 font-medium"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.label}
                 </a>
               ))}
-              <Button className="bg-red-600 hover:bg-red-700 text-white w-full mt-4">
+              <Button className="bg-primary hover:bg-primary/90 text-background w-full mt-4">
                 Quero garantir minha inscrição
               </Button>
             </nav>
