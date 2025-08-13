@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowRight, Clock, CheckCircle, Users, Award, Zap } from 'lucide-react';
 import Container from '../common/Container';
+import LeadFormModal from '../common/LeadFormModal';
 
 const CTASection = () => {
   const [timeLeft, setTimeLeft] = useState({
@@ -106,13 +107,21 @@ const CTASection = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-red-600 px-12 py-4 rounded-xl font-bold text-lg hover:bg-gray-100 transition-colors shadow-lg group">
-                Quero garantir minha inscrição
-                <ArrowRight className="ml-2 h-5 w-5 inline group-hover:translate-x-1 transition-transform" />
-              </button>
-              <button className="border-2 border-white text-white px-12 py-4 rounded-xl font-bold text-lg hover:bg-white hover:text-red-600 transition-colors">
-                Falar com Especialista
-              </button>
+              <LeadFormModal
+                trigger={
+                  <button className="bg-white text-red-600 px-12 py-4 rounded-xl font-bold text-lg hover:bg-gray-100 transition-colors shadow-lg group">
+                    Quero garantir minha inscrição
+                    <ArrowRight className="ml-2 h-5 w-5 inline group-hover:translate-x-1 transition-transform" />
+                  </button>
+                }
+              />
+              <LeadFormModal
+                trigger={
+                  <button className="border-2 border-white text-white px-12 py-4 rounded-xl font-bold text-lg hover:bg-white hover:text-red-600 transition-colors">
+                    Falar com Especialista
+                  </button>
+                }
+              />
             </div>
           </div>
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import { CheckCircle, Stethoscope } from 'lucide-react';
 import Container from '../common/Container';
+import LeadFormModal from '../common/LeadFormModal';
 
 const AboutSection = () => {
   const founders = [
@@ -121,9 +122,13 @@ const AboutSection = () => {
             <p className="text-lg text-gray-600 mb-8">
               Chega de improviso. Em dois dias, você pode sair do medo e entrar no plantão com segurança real.
             </p>
-            <button className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors">
-              Quero garantir minha vaga
-            </button>
+            <LeadFormModal
+              trigger={
+                <button className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors">
+                  Quero garantir minha vaga
+                </button>
+              }
+            />
           </div>
         </div>
       </Container>
