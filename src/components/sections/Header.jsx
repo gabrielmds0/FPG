@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Menu, X, Heart } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Container from '../common/Container';
+import LeadFormModal from '../common/LeadFormModal';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -41,9 +42,13 @@ const Header = () => {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Button className="bg-red-600 hover:bg-red-700 text-white px-6 py-2">
-              Quero garantir minha inscrição
-            </Button>
+            <LeadFormModal
+              trigger={
+                <Button className="bg-red-600 hover:bg-red-700 text-white px-6 py-2">
+                  Quero garantir minha inscrição
+                </Button>
+              }
+            />
           </div>
 
           {/* Mobile menu button */}
@@ -71,9 +76,13 @@ const Header = () => {
                   {item.label}
                 </a>
               ))}
-              <Button className="bg-red-600 hover:bg-red-700 text-white w-full mt-4">
-                Quero garantir minha inscrição
-              </Button>
+              <LeadFormModal
+                trigger={
+                  <Button className="bg-red-600 hover:bg-red-700 text-white w-full mt-4">
+                    Quero garantir minha inscrição
+                  </Button>
+                }
+              />
             </nav>
           </div>
         )}
