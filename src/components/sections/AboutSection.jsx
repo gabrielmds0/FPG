@@ -7,14 +7,14 @@ const AboutSection = () => {
   const founders = [
     {
       name: 'Dr. Ian Camilo',
-      image: '/ian-camilo.jpg',
+      image: '/Ian.jpg',
       credentials: 'Médico pós-graduado em Medicina de Emergência e Cardiologia',
       role: 'Professor universitário e criador do método RPP',
       specialties: ['Raciocínio, Prescrição e Procedimento', 'Medicina de Emergência', 'Cardiologia']
     },
     {
       name: 'Dr. Rodrigo Cleto',
-      image: '/rodrigo-cleto.jpg',
+      image: '/Cleto.jpg',
       credentials: 'Médico com mais de 20 anos de experiência como coordenador de UTI',
       role: 'Especialista em Clínica Médica, Cardiologia e Terapia Intensiva',
       specialties: ['Instrutor de ACLS/BLS pela AHA', 'Decisões clínicas de alta complexidade', 'Coordenação de UTI']
@@ -52,10 +52,15 @@ const AboutSection = () => {
                 className="bg-white rounded-2xl shadow-lg overflow-hidden transition-transform hover:shadow-xl hover:-translate-y-1"
               >
                 <img
-                  src={founder.image}
-                  alt={`Foto de ${founder.name}`}
-                  className="w-full h-64 object-cover"
-                />
+  src={founder.image}
+  alt={`Foto de ${founder.name}`}
+  className={`w-full h-92 object-cover ${
+    founder.name.includes('Ian')
+      ? 'object-[center_18%]' // move o foco 25% para cima
+      : 'object-[center_32%]'  // move o foco 5% para cima
+  }`}
+/>
+
                 <div className="p-6 sm:p-8">
                   <div className="flex items-center mb-4 sm:mb-6">
                     <div className="bg-red-100 p-3 rounded-full mr-4">
