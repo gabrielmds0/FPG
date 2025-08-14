@@ -7,14 +7,14 @@ const AboutSection = () => {
   const founders = [
     {
       name: 'Dr. Ian Camilo',
-      image: 'https://placehold.co/600x400?text=Dr.+Ian+Camilo',
+      image: '/ian-camilo.jpg',
       credentials: 'Médico pós-graduado em Medicina de Emergência e Cardiologia',
       role: 'Professor universitário e criador do método RPP',
       specialties: ['Raciocínio, Prescrição e Procedimento', 'Medicina de Emergência', 'Cardiologia']
     },
     {
       name: 'Dr. Rodrigo Cleto',
-      image: 'https://placehold.co/600x400?text=Dr.+Rodrigo+Cleto',
+      image: '/rodrigo-cleto.jpg',
       credentials: 'Médico com mais de 20 anos de experiência como coordenador de UTI',
       role: 'Especialista em Clínica Médica, Cardiologia e Terapia Intensiva',
       specialties: ['Instrutor de ACLS/BLS pela AHA', 'Decisões clínicas de alta complexidade', 'Coordenação de UTI']
