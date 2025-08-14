@@ -5,14 +5,14 @@ import Container from '../common/Container';
 const TestimonialsSection = () => {
   const testimonials = [
     {
-      name: 'Júlia',
+      name: 'Judy',
       role: 'Médica',
       content: 'Depois do workshop, a nossa visão de emergência muda completamente. A gente cobre pontos cegos que nem sabia que existiam. Estou com uma expectativa enorme para a parte prática, é ela que vai fazer diferença real no plantão.',
       rating: 5
     },
     {
-      name: 'Marina',
-      role: 'Médica',
+      name: 'Marcelo',
+      role: 'Médico',
       content: 'Eu indico o workshop com certeza. As aulas foram muito exclusivas, conteúdo refinado, direto ao ponto. Agora, com as práticas, sei que vai ser ainda melhor. Foi uma experiência realmente bacana.',
       rating: 5
     },

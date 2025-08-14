@@ -28,7 +28,7 @@ const FeaturesSection = () => {
       title: 'Estação 1: Via Aérea e Intervenções Críticas',
       description: 'Desenvolva domínio técnico sobre os procedimentos mais críticos: Intubação Orotraqueal (IOT), Cricotireoidostomia e Drenagem de Tórax. Treinamento com manequins avançados e orientação direta.',
       iconColor: 'text-red-600',
-      bgColor: 'bg-red-100',
+      bgColor: 'bg-red-50',
       highlights: ['Intubação Orotraqueal', 'Cricotireoidostomia', 'Drenagem de Tórax']
     },
     {
@@ -84,7 +84,7 @@ const FeaturesSection = () => {
       title: 'Metodologia 100% Hands On',
       description: 'Método RPP – Raciocínio, Prescrição e Procedimentos, com supervisão direta de instrutores experientes. Experiência prática e estratégica para controle de situações críticas.',
       iconColor: 'text-gray-700',
-      bgColor: 'bg-gray-100',
+      bgColor: 'bg-gray-350',
       highlights: ['Método RPP', 'Supervisão direta', 'Experiência prática']
     }
   ];

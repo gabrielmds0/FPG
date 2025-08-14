@@ -61,7 +61,7 @@ const CTASection = () => {
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0 bg-gradient-to-r from-red-500/20 to-transparent"></div>
       </div>
-      
+
       <Container>
         <div className="relative z-10">
           {/* Main CTA */}
@@ -71,7 +71,7 @@ const CTASection = () => {
               <span className="text-red-500"> Sala Vermelha?</span>
             </h2>
             <p className="text-xl lg:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed mb-8">
-              Junte-se a mais de 3.000 médicos que já transformaram sua prática com a 
+              Junte-se a mais de 3.000 médicos que já transformaram sua prática com a
               Liberdade Médica. Inscreva-se agora e garante sua vaga na próxima turma.
             </p>
           </div>
@@ -136,9 +136,7 @@ const CTASection = () => {
           {/* Trust Indicators */}
           <div className="text-center">
             <div className="flex items-center justify-center space-x-2 text-gray-300 mb-4">
-              <CheckCircle className="h-5 w-5 text-green-400" />
-              <span>Sem compromisso</span>
-              <span>•</span>
+
               <CheckCircle className="h-5 w-5 text-green-400" />
               <span>Suporte incluído</span>
               <span>•</span>
@@ -151,20 +149,6 @@ const CTASection = () => {
           </div>
 
           {/* Contact Info */}
-          <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            <div>
-              <h4 className="text-xl font-bold mb-2 text-red-400">Telefone</h4>
-              <p className="text-gray-300">+55 (11) 3000-0000</p>
-            </div>
-            <div>
-              <h4 className="text-xl font-bold mb-2 text-red-400">Email</h4>
-              <p className="text-gray-300">contato@liberdademedica.com.br</p>
-            </div>
-            <div>
-              <h4 className="text-xl font-bold mb-2 text-red-400">Horário</h4>
-              <p className="text-gray-300">Segunda a Sexta, 8h às 18h</p>
-            </div>
-          </div>
         </div>
       </Container>
     </section>

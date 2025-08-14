@@ -50,7 +50,7 @@ const FAQSection = () => {
       <Container>
         <div className="text-center mb-16">
           <div className="inline-flex items-center justify-center w-16 h-16 bg-red-100 rounded-full mb-6">
-            <HelpCircle className="h-8 w-8 text-red-600" />
+            <HelpCircle className="h-8 w-8 text-white" />
           </div>
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
             Perguntas <span className="text-red-600">Frequentes</span>
