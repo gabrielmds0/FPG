@@ -1,32 +1,34 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowRight, Clock, CheckCircle, Users, Award, Zap } from 'lucide-react';
+import { ArrowRight, CheckCircle, Users, Award, Zap } from 'lucide-react';
 import Container from '../common/Container';
 import LeadFormModal from '../common/LeadFormModal';
 
 const CTASection = () => {
-  const [timeLeft, setTimeLeft] = useState({
-    days: 15,
-    hours: 8,
-    minutes: 30,
-    seconds: 40
-  });
+  const calculateTimeLeft = () => {
+    const now = new Date();
+    const currentYear = now.getFullYear();
+    let targetDate = new Date(currentYear, 9, 4, 0, 0, 0);
+    if (now > targetDate) {
+      targetDate = new Date(currentYear + 1, 9, 4, 0, 0, 0);
+    }
+    const difference = targetDate - now;
+    if (difference <= 0) {
+      return { days: 0, hours: 0, minutes: 0, seconds: 0 };
+    }
+    return {
+      days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+      hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+      minutes: Math.floor((difference / (1000 * 60)) % 60),
+      seconds: Math.floor((difference / 1000) % 60)
+    };
+  };
+
+  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setTimeLeft(prev => {
-        if (prev.seconds > 0) {
-          return { ...prev, seconds: prev.seconds - 1 };
-        } else if (prev.minutes > 0) {
-          return { ...prev, minutes: prev.minutes - 1, seconds: 59 };
-        } else if (prev.hours > 0) {
-          return { ...prev, hours: prev.hours - 1, minutes: 59, seconds: 59 };
-        } else if (prev.days > 0) {
-          return { ...prev, days: prev.days - 1, hours: 23, minutes: 59, seconds: 59 };
-        }
-        return prev;
-      });
+      setTimeLeft(calculateTimeLeft());
     }, 1000);
-
     return () => clearInterval(timer);
   }, []);
 
