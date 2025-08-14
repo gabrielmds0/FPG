@@ -11,17 +11,33 @@ import {
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
+import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { User, Phone, Mail, UserPlus } from 'lucide-react';
 
 const LeadFormModal = ({ trigger }) => {
   const [open, setOpen] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    const formData = new FormData(e.target);
+    const payload = {
+      name: formData.get('name'),
+      phone: formData.get('phone'),
+      email: formData.get('email'),
+      gender: formData.get('gender') || null,
+    };
+
+    try {
+      await fetch('https://example.com/webhook', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+    } catch (error) {
+      console.error('Erro ao enviar formulário', error);
+    }
+
     setOpen(false);
-    setTimeout(() => {
-      window.location.href = 'https://uol.com.br';
-    }, 1500);
   };
 
   return (
@@ -42,22 +58,39 @@ const LeadFormModal = ({ trigger }) => {
             <Label htmlFor="name">Nome</Label>
             <div className="relative">
               <User className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-red-600" />
-              <Input id="name" placeholder="Seu nome" className="pl-9" required />
+              <Input id="name" name="name" placeholder="Seu nome" className="pl-9" required />
             </div>
           </div>
           <div className="space-y-2">
             <Label htmlFor="phone">Telefone</Label>
             <div className="relative">
               <Phone className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-red-600" />
-              <Input id="phone" placeholder="(00) 00000-0000" className="pl-9" required />
+              <Input id="phone" name="phone" placeholder="(00) 00000-0000" className="pl-9" required />
             </div>
           </div>
           <div className="space-y-2">
             <Label htmlFor="email">Email</Label>
             <div className="relative">
               <Mail className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-red-600" />
-              <Input id="email" type="email" placeholder="voce@exemplo.com" className="pl-9" required />
+              <Input id="email" name="email" type="email" placeholder="voce@exemplo.com" className="pl-9" required />
             </div>
+          </div>
+          <div className="space-y-2">
+            <Label>Sexo</Label>
+            <RadioGroup name="gender" className="flex gap-4">
+              <div className="flex items-center space-x-2">
+                <RadioGroupItem value="masculino" id="gender-masculino" />
+                <Label htmlFor="gender-masculino">Masculino</Label>
+              </div>
+              <div className="flex items-center space-x-2">
+                <RadioGroupItem value="feminino" id="gender-feminino" />
+                <Label htmlFor="gender-feminino">Feminino</Label>
+              </div>
+              <div className="flex items-center space-x-2">
+                <RadioGroupItem value="nao-informar" id="gender-nao" />
+                <Label htmlFor="gender-nao">Prefiro não informar</Label>
+              </div>
+            </RadioGroup>
           </div>
           <DialogFooter className="pt-2">
             <Button type="submit" className="w-full bg-red-600 text-white hover:bg-red-700">
