@@ -115,12 +115,12 @@ const AboutSection = () => {
             {targetAudience.map((audience, index) => (
               <div
                 key={index}
-                className="bg-white rounded-xl p-5 sm:p-6 shadow-lg transition-all hover:-translate-y-1 hover:shadow-xl"
+                className="bg-gradient-to-br from-white to-red-50 rounded-xl p-4 sm:p-6 shadow-lg transition-all hover:-translate-y-1 hover:shadow-xl flex items-start gap-3 sm:flex-col sm:items-center sm:text-center"
               >
-                <div className="flex items-center">
-                  <CheckCircle className="h-6 w-6 text-red-600 mr-3 flex-shrink-0" />
-                  <span className="text-gray-800 font-medium">{audience}</span>
+                <div className="bg-red-100 p-2 rounded-full sm:mb-3">
+                  <CheckCircle className="h-5 w-5 text-red-600 sm:h-6 sm:w-6" />
                 </div>
+                <span className="text-gray-800 font-medium leading-snug text-sm sm:text-base">{audience}</span>
               </div>
             ))}
           </div>
