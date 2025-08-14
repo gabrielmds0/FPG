@@ -8,25 +8,29 @@ const StatsSection = () => {
       icon: Users,
       number: '500+',
       label: 'Hospitais Atendidos',
-      color: 'text-blue-600'
+      iconColor: 'text-blue-600',
+      bgColor: 'bg-blue-50'
     },
     {
       icon: FileText,
       number: '50.000+',
       label: 'Casos Analisados',
-      color: 'text-green-600'
+      iconColor: 'text-green-600',
+      bgColor: 'bg-green-50'
     },
     {
       icon: Globe,
       number: '15',
       label: 'Países Utilizando',
-      color: 'text-purple-600'
+      iconColor: 'text-purple-600',
+      bgColor: 'bg-purple-50'
     },
     {
       icon: Award,
       number: '98%',
       label: 'Taxa de Satisfação',
-      color: 'text-red-600'
+      iconColor: 'text-red-600',
+      bgColor: 'bg-red-50'
     }
   ];
 
@@ -49,17 +53,17 @@ const StatsSection = () => {
               key={index}
               className="bg-white rounded-xl p-8 text-center shadow-lg hover:shadow-xl transition-shadow duration-300"
             >
-              <div className={`inline-flex items-center justify-center w-16 h-16 rounded-full bg-gray-100 mb-6`}>
-                <stat.icon className={`h-8 w-8 ${stat.color}`} />
+              <div
+                className={`inline-flex items-center justify-center w-16 h-16 rounded-full ${stat.bgColor} mb-6`}
+              >
+                <stat.icon className={`h-8 w-8 ${stat.iconColor}`} />
               </div>
-              
+
               <div className="space-y-2">
-                <div className={`text-4xl font-bold ${stat.color}`}>
+                <div className={`text-4xl font-bold ${stat.iconColor}`}>
                   {stat.number}
                 </div>
-                <div className="text-gray-600 font-medium">
-                  {stat.label}
-                </div>
+                <div className="text-gray-600 font-medium">{stat.label}</div>
               </div>
             </div>
           ))}

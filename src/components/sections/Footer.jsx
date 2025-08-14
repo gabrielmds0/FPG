@@ -82,10 +82,10 @@ const Footer = () => {
                   <a
                     key={index}
                     href={social.href}
-                    className="bg-gray-800 p-3 rounded-lg hover:bg-red-600 transition-colors"
+                    className="bg-gray-800 p-3 rounded-lg hover:bg-red-600 transition-colors group"
                     aria-label={social.label}
                   >
-                    <social.icon className="h-5 w-5" />
+                    <social.icon className="h-5 w-5 text-gray-400 group-hover:text-white transition-colors" />
                   </a>
                 ))}
               </div>
