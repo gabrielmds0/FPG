@@ -117,13 +117,6 @@ const CTASection = () => {
                   </button>
                 }
               />
-              <LeadFormModal
-                trigger={
-                  <button className="border-2 border-white text-white px-12 py-4 rounded-xl font-bold text-lg hover:bg-white hover:text-red-600 transition-colors">
-                    Falar com Especialista
-                  </button>
-                }
-              />
             </div>
           </div>
 

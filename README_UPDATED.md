@@ -173,8 +173,7 @@ npm run preview
 
 ### CTAs Principais
 1. **"Quero garantir minha inscrição"** - CTA primário
-2. **"Falar com Especialista"** - CTA secundário
-3. **"Quero me tornar aluno"** - CTA alternativo
+2. **"Quero me tornar aluno"** - CTA alternativo
 
 ### Elementos de Conversão
 - Urgência: Contador regressivo
