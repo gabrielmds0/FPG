@@ -19,63 +19,72 @@ const FeaturesSection = () => {
       icon: GraduationCap,
       title: 'Aulas Online (Pré-Imersão)',
       description: '10 aulas exclusivas sobre os Fundamentos da Sala Vermelha. Casos clínicos reais, abordagem prática ao paciente grave e revisão teórica estratégica guiados por especialistas da linha de frente.',
-      color: 'bg-blue-500',
+      iconColor: 'text-blue-600',
+      bgColor: 'bg-blue-100',
       highlights: ['Casos clínicos reais', 'Abordagem prática', 'Revisão teórica estratégica']
     },
     {
       icon: Target,
       title: 'Estação 1: Via Aérea e Intervenções Críticas',
       description: 'Desenvolva domínio técnico sobre os procedimentos mais críticos: Intubação Orotraqueal (IOT), Cricotireoidostomia e Drenagem de Tórax. Treinamento com manequins avançados e orientação direta.',
-      color: 'bg-red-500',
+      iconColor: 'text-red-600',
+      bgColor: 'bg-red-100',
       highlights: ['Intubação Orotraqueal', 'Cricotireoidostomia', 'Drenagem de Tórax']
     },
     {
       icon: Monitor,
       title: 'Estação 2: Ultrassonografia e Acesso',
       description: 'Use o ultrassom como extensão do seu raciocínio clínico. Protocolo RUSH para identificar causas de choque e acesso venoso periférico e central guiado por imagem.',
-      color: 'bg-purple-500',
+      iconColor: 'text-purple-600',
+      bgColor: 'bg-purple-100',
       highlights: ['Protocolo RUSH', 'Acesso venoso guiado', 'Decisões em tempo real']
     },
     {
       icon: Heart,
       title: 'Estação 3: Ventilação e Suporte Respiratório',
       description: 'Pratique Ventilação Mecânica (VM) e Ventilação Não Invasiva (VNI). Aprenda parâmetros ideais, ajustes conforme quadro clínico e como evitar complicações.',
-      color: 'bg-green-500',
+      iconColor: 'text-green-600',
+      bgColor: 'bg-green-100',
       highlights: ['Ventilação Mecânica', 'Ventilação Não Invasiva', 'Parâmetros ideais']
     },
     {
       icon: Baby,
       title: 'Estação 4: Emergências Pediátricas',
       description: 'Aplique o protocolo PALS na prática com simulações realistas. Reconheça sinais de gravidade, aja com segurança e prescreva condutas específicas para pacientes pediátricos.',
-      color: 'bg-pink-500',
+      iconColor: 'text-pink-600',
+      bgColor: 'bg-pink-100',
       highlights: ['Protocolo PALS', 'Simulações realistas', 'Condutas específicas']
     },
     {
       icon: Users,
       title: 'Talks e Dinâmicas',
       description: 'Aulas dinâmicas e discussões clínicas que aproximam teoria da realidade. Casos reais, troca entre colegas e estudos orientados pelos instrutores.',
-      color: 'bg-indigo-500',
+      iconColor: 'text-indigo-600',
+      bgColor: 'bg-indigo-100',
       highlights: ['Casos reais', 'Discussões clínicas', 'Troca de experiências']
     },
     {
       icon: Coffee,
       title: 'Happy Hour Médico',
       description: 'Conecte com colegas de profissão, troque experiências e amplie sua rede. Momento de descompressão e aprendizado informal com quem realmente vive o que ensina.',
-      color: 'bg-orange-500',
+      iconColor: 'text-orange-600',
+      bgColor: 'bg-orange-100',
       highlights: ['Networking', 'Troca de experiências', 'Aprendizado informal']
     },
     {
       icon: FileText,
       title: 'Oficina de Prescrição',
       description: 'Monte prescrições e planos de conduta completos para casos reais, com tempo cronometrado e análise crítica dos instrutores. Transforme conhecimento em agilidade clínica.',
-      color: 'bg-teal-500',
+      iconColor: 'text-teal-600',
+      bgColor: 'bg-teal-100',
       highlights: ['Prescrições práticas', 'Tempo cronometrado', 'Análise crítica']
     },
     {
       icon: Stethoscope,
       title: 'Metodologia 100% Hands On',
       description: 'Método RPP – Raciocínio, Prescrição e Procedimentos, com supervisão direta de instrutores experientes. Experiência prática e estratégica para controle de situações críticas.',
-      color: 'bg-gray-700',
+      iconColor: 'text-gray-700',
+      bgColor: 'bg-gray-100',
       highlights: ['Método RPP', 'Supervisão direta', 'Experiência prática']
     }
   ];
@@ -100,8 +109,8 @@ const FeaturesSection = () => {
               key={index}
               className="min-w-[80%] sm:min-w-[60%] md:min-w-0 group bg-white rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-gray-200 hover:-translate-y-1 snap-center"
             >
-              <div className={`inline-flex items-center justify-center w-14 h-14 rounded-xl ${experience.color} mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                <experience.icon className="h-7 w-7 text-white" />
+              <div className={`inline-flex items-center justify-center w-14 h-14 rounded-xl ${experience.bgColor} mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                <experience.icon className={`h-7 w-7 ${experience.iconColor}`} />
               </div>
 
               <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-4 group-hover:text-red-600 transition-colors">
