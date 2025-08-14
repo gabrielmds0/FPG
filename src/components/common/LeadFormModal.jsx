@@ -44,6 +44,11 @@ const LeadFormModal = ({ trigger }) => {
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>{trigger}</DialogTrigger>
       <DialogContent className="sm:max-w-md rounded-2xl border border-red-100 p-8 shadow-xl">
+        <img
+          src="/logo-vertical.png"
+          alt="Formação Paciente Grave"
+          className="mx-auto mb-4 h-20 w-auto"
+        />
         <DialogHeader className="text-center">
           <DialogTitle className="flex items-center justify-center gap-2 text-2xl font-bold text-red-600">
             <UserPlus className="h-6 w-6" />

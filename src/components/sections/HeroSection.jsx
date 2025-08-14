@@ -19,6 +19,11 @@ const HeroSection = () => {
         <Container className="relative z-10">
           {/* conteúdo existente */}
           <div className="text-center max-w-5xl mx-auto">
+            <img
+              src="/logo-vertical.png"
+              alt="Formação Paciente Grave"
+              className="mx-auto mb-8 h-24 w-auto"
+            />
             {/* Tagline */}
             <p className="text-primary font-semibold text-lg tracking-wide uppercase mb-6">
               Aprenda a dominar a sala vermelha
