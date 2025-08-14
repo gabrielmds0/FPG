@@ -20,15 +20,21 @@ const LeadFormModal = ({ trigger }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
+    const urlParams = new URLSearchParams(window.location.search);
     const payload = {
       name: formData.get('name'),
       phone: formData.get('phone'),
       email: formData.get('email'),
       gender: formData.get('gender') || null,
+      utm_source: urlParams.get('utm_source'),
+      utm_medium: urlParams.get('utm_medium'),
+      utm_campaign: urlParams.get('utm_campaign'),
+      utm_content: urlParams.get('utm_content'),
+      utm_term: urlParams.get('utm_term'),
     };
 
     try {
-      await fetch('https://example.com/webhook', {
+      await fetch('https://projetolm-n8n.8x0hqh.easypanel.host/webhook/payload', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
