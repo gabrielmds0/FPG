@@ -13,13 +13,14 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { User, Phone, Mail, UserPlus } from 'lucide-react';
+import { toast } from 'sonner';
 
 const LeadFormModal = ({ trigger }) => {
   const [open, setOpen] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const formData = new FormData(e.target);
+    const formData = new FormData(e.currentTarget);
     const urlParams = new URLSearchParams(window.location.search);
     const payload = {
       name: formData.get('name'),
@@ -34,16 +35,21 @@ const LeadFormModal = ({ trigger }) => {
     };
 
     try {
-      await fetch('https://projetolm-n8n.8x0hqh.easypanel.host/webhook/payload', {
+      const response = await fetch('https://projetolm-n8n.8x0hqh.easypanel.host/webhook/payload', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
       });
+      if (!response.ok) {
+        throw new Error('Erro ao enviar formulário');
+      }
+      toast.success('Formulário enviado com sucesso!');
+      e.currentTarget.reset();
+      setOpen(false);
     } catch (error) {
       console.error('Erro ao enviar formulário', error);
+      toast.error('Não foi possível enviar. Tente novamente.');
     }
-
-    setOpen(false);
   };
 
   return (
