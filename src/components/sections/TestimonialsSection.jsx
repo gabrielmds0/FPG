@@ -6,7 +6,7 @@ const TestimonialsSection = () => {
   const testimonials = [
     {
       name: 'Judy',
-      role: 'Médica',
+      role: 'Estudante de Medicina',
       image: 'Judy.png',
       content:
         'Depois do workshop, a nossa visão de emergência muda completamente. A gente cobre pontos cegos que nem sabia que existiam. Estou com uma expectativa enorme para a parte prática, é ela que vai fazer diferença real no plantão.',
