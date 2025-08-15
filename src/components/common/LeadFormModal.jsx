@@ -34,7 +34,7 @@ const LeadFormModal = ({ trigger }) => {
     };
 
     try {
-      await fetch('https://projetolm-n8n.8x0hqh.easypanel.host/webhook/payload', {
+      await fetch('https://projetolm-n8n.8x0hqh.easypanel.host/webhook/93a7787e-38b8-4cee-91a3-0fb66b1d0d4b', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
