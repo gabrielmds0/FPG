@@ -20,7 +20,8 @@ const LeadFormModal = ({ trigger }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const formData = new FormData(e.currentTarget);
+    const form = e.currentTarget;
+    const formData = new FormData(form);
     const urlParams = new URLSearchParams(window.location.search);
     const payload = {
       name: formData.get('name'),
@@ -44,7 +45,7 @@ const LeadFormModal = ({ trigger }) => {
         throw new Error('Erro ao enviar formulário');
       }
       toast.success('Formulário enviado com sucesso!');
-      e.currentTarget.reset();
+      form.reset();
       setOpen(false);
     } catch (error) {
       console.error('Erro ao enviar formulário', error);
