@@ -20,7 +20,8 @@ const LeadFormModal = ({ trigger }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const formData = new FormData(e.currentTarget);
+    const form = e.currentTarget;
+    const formData = new FormData(form);
     const urlParams = new URLSearchParams(window.location.search);
     const payload = {
       name: formData.get('name'),
@@ -35,7 +36,7 @@ const LeadFormModal = ({ trigger }) => {
     };
 
     try {
-      const response = await fetch('https://projetolm-n8n.8x0hqh.easypanel.host/webhook/payload', {
+      const response = await fetch('https://projetolm-n8n.8x0hqh.easypanel.host/webhook/93a7787e-38b8-4cee-91a3-0fb66b1d0d4b', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
@@ -44,7 +45,7 @@ const LeadFormModal = ({ trigger }) => {
         throw new Error('Erro ao enviar formulário');
       }
       toast.success('Formulário enviado com sucesso!');
-      e.currentTarget.reset();
+      form.reset();
       setOpen(false);
     } catch (error) {
       console.error('Erro ao enviar formulário', error);
