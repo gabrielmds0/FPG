@@ -73,7 +73,7 @@ const AboutSection = () => {
                 <div className="p-6 sm:p-8">
                   <div className="flex items-center mb-4 sm:mb-6">
                     <div className="bg-red-100 p-3 rounded-full mr-4">
-                      <Stethoscope className="h-8 w-8 text-red-600" />
+                      <Stethoscope className="h-8 w-8 text-white" />
                     </div>
                     <div>
                       <h3 className="text-xl sm:text-2xl font-bold text-gray-900">{founder.name}</h3>
@@ -127,7 +127,7 @@ const AboutSection = () => {
                 className="bg-gradient-to-br from-white to-red-50 rounded-xl p-4 sm:p-6 shadow-lg transition-all hover:-translate-y-1 hover:shadow-xl flex items-start gap-3 sm:flex-col sm:items-center sm:text-center"
               >
                 <div className="bg-red-100 p-2 rounded-full sm:mb-3">
-                  <CheckCircle className="h-5 w-5 text-red-600 sm:h-6 sm:w-6" />
+                  <CheckCircle className="h-5 w-5 text-white sm:h-6 sm:w-6" />
                 </div>
                 <span className="text-gray-800 font-medium leading-snug text-sm sm:text-base">{audience}</span>
               </div>
