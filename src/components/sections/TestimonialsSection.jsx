@@ -46,7 +46,7 @@ const TestimonialsSection = () => {
             O que dizem os nossos <span className="text-red-600">alunos?</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Médicos de todo o Brasil já transformaram sua prática com a Liberdade Médica. 
+            Médicos de todo o Brasil já transformaram sua prática com a Liberdade Médica.
             Veja alguns depoimentos de quem vivenciou nossa formação.
           </p>
         </div>
@@ -77,8 +77,7 @@ const TestimonialsSection = () => {
               {/* Author */}
               <div className="flex items-center mt-4">
                 <img
-                  src={`/${testimonial.image}`}
-                  alt={`Foto de ${testimonial.name}`}
+                  src={`${import.meta.env.BASE_URL}${testimonial.image}`} alt={`Foto de ${testimonial.name}`}
                   className="w-14 h-14 md:w-16 md:h-16 rounded-full object-cover mr-4 border-2 border-red-600"
                 />
                 <div>
@@ -117,7 +116,7 @@ const TestimonialsSection = () => {
         <div className="mt-16 bg-gradient-to-r from-red-600 to-red-700 rounded-2xl p-12 text-white text-center">
           <Quote className="h-12 w-12 text-red-200 mx-auto mb-6" />
           <p className="text-2xl font-medium mb-6 italic max-w-4xl mx-auto">
-            "A formação acadêmica sozinha não nos prepara para a realidade da sala vermelha. 
+            "A formação acadêmica sozinha não nos prepara para a realidade da sala vermelha.
             Aqui você ganha a bagagem, confiança e preparo que realmente importa."
           </p>
           <div className="text-lg opacity-90">

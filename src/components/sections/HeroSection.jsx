@@ -11,7 +11,7 @@ const HeroSection = () => {
       
      <section id="home"
         className="relative bg-cover bg-center text-white py-20 lg:py-32"
-        style={{ backgroundImage: "url('/hero.jpg')",
+        style={{   backgroundImage: `url('${import.meta.env.BASE_URL}hero.jpg')`,
            backgroundPosition: "center 90%"
         }}
       >
@@ -20,7 +20,7 @@ const HeroSection = () => {
           {/* conteúdo existente */}
           <div className="text-center max-w-5xl mx-auto">
             <img
-              src="/logo-vertical.png"
+              src={`${import.meta.env.BASE_URL}logo-vertical.png`}
               alt="Formação Paciente Grave"
               className="mx-auto mb-8 h-24 w-auto"
             />

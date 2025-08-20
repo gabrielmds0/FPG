@@ -1,20 +1,25 @@
 import React from 'react';
 import { CheckCircle, Stethoscope } from 'lucide-react';
-import Container from '../common/Container';
-import LeadFormModal from '../common/LeadFormModal';
 
 const AboutSection = () => {
+  // Helper function para adicionar base URL
+  const getImageUrl = (imagePath) => {
+    // Remove a barra inicial se existir e adiciona BASE_URL
+    const cleanPath = imagePath.startsWith('/') ? imagePath.slice(1) : imagePath;
+    return `${import.meta.env.BASE_URL}${cleanPath}`;
+  };
+
   const founders = [
     {
       name: 'Dr. Ian Camilo',
-      image: '/Ian.jpg',
+      image: 'Ian.jpg', // Sem barra inicial
       credentials: 'Médico pós-graduado em Medicina de Emergência e Cardiologia',
       role: 'Professor universitário e criador do método RPP',
       specialties: ['Raciocínio, Prescrição e Procedimento', 'Medicina de Emergência', 'Cardiologia']
     },
     {
       name: 'Dr. Rodrigo Cleto',
-      image: '/Cleto.jpg',
+      image: 'Cleto.jpg', // Sem barra inicial
       credentials: 'Médico com mais de 20 anos de experiência como coordenador de UTI',
       role: 'Especialista em Clínica Médica, Cardiologia e Terapia Intensiva',
       specialties: ['Instrutor de ACLS/BLS pela AHA', 'Decisões clínicas de alta complexidade', 'Coordenação de UTI']
@@ -32,7 +37,7 @@ const AboutSection = () => {
 
   return (
     <section id="about" className="py-16 sm:py-24 bg-gray-50">
-      <Container>
+      <div className="container mx-auto px-4">
         {/* Quem está por trás da Formação */}
         <div className="mb-16 sm:mb-20">
           <div className="text-center mb-12 sm:mb-16">
@@ -52,19 +57,23 @@ const AboutSection = () => {
                 className="bg-white rounded-2xl shadow-lg overflow-hidden transition-transform hover:shadow-xl hover:-translate-y-1"
               >
                 <img
-  src={founder.image}
-  alt={`Foto de ${founder.name}`}
-  className={`w-full h-92 object-cover ${
-    founder.name.includes('Ian')
-      ? 'object-[center_18%]' // move o foco 25% para cima
-      : 'object-[center_32%]'  // move o foco 5% para cima
-  }`}
-/>
+                  src={getImageUrl(founder.image)}
+                  alt={`Foto de ${founder.name}`}
+                  className={`w-full h-92 object-cover ${
+                    founder.name.includes('Ian')
+                      ? 'object-[center_18%]'
+                      : 'object-[center_32%]'
+                  }`}
+                  onError={(e) => {
+                    console.error(`Erro ao carregar imagem: ${founder.image}`);
+                    e.target.style.opacity = '0.3';
+                  }}
+                />
 
                 <div className="p-6 sm:p-8">
                   <div className="flex items-center mb-4 sm:mb-6">
                     <div className="bg-red-100 p-3 rounded-full mr-4">
-                      <Stethoscope className="h-8 w-8 text-white" />
+                      <Stethoscope className="h-8 w-8 text-red-600" />
                     </div>
                     <div>
                       <h3 className="text-xl sm:text-2xl font-bold text-gray-900">{founder.name}</h3>
@@ -118,7 +127,7 @@ const AboutSection = () => {
                 className="bg-gradient-to-br from-white to-red-50 rounded-xl p-4 sm:p-6 shadow-lg transition-all hover:-translate-y-1 hover:shadow-xl flex items-start gap-3 sm:flex-col sm:items-center sm:text-center"
               >
                 <div className="bg-red-100 p-2 rounded-full sm:mb-3">
-                  <CheckCircle className="h-5 w-5 text-white sm:h-6 sm:w-6" />
+                  <CheckCircle className="h-5 w-5 text-red-600 sm:h-6 sm:w-6" />
                 </div>
                 <span className="text-gray-800 font-medium leading-snug text-sm sm:text-base">{audience}</span>
               </div>
@@ -133,19 +142,14 @@ const AboutSection = () => {
             <p className="text-base sm:text-lg text-gray-600 mb-8">
               Chega de improviso. Em dois dias, você pode sair do medo e entrar no plantão com segurança real.
             </p>
-            <LeadFormModal
-              trigger={
-                <button className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-lg font-semibold text-lg transition-colors">
-                  Quero garantir minha vaga
-                </button>
-              }
-            />
+            <button className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-lg font-semibold text-lg transition-colors">
+              Quero garantir minha vaga
+            </button>
           </div>
         </div>
-      </Container>
+      </div>
     </section>
   );
 };
 
 export default AboutSection;
-
