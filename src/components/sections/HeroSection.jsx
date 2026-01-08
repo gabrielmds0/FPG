@@ -1,10 +1,18 @@
 import React from 'react';
-import { ArrowRight, Play, Heart, Users, Target, Award } from 'lucide-react';
+import { ArrowRight, Heart, Users, Target, Calendar, UserCheck } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Container from '../common/Container';
 import LeadFormModal from '../common/LeadFormModal';
+import { useGoogleSheetsFPPG } from '@/hooks/useGoogleSheetsFPPG';
 
 const HeroSection = () => {
+  // Busca dados dinâmicos da planilha Google Sheets
+  const { data: sheetData, loading, error } = useGoogleSheetsFPPG();
+
+  // Extrai data e local da planilha (ou usa valores padrão durante carregamento)
+  const eventDate = sheetData?.Data || 'Carregando...';
+  const eventCity = sheetData?.Local || 'Carregando...';
+
   return (
     <>
       {/* Hero Section */}
@@ -37,13 +45,14 @@ const HeroSection = () => {
             
             {/* Subtitle */}
             <h2 className="text-2xl lg:text-4xl font-semibold text-background/80 mb-8">
-              Dois dias de prática para dominar a sala vermelha
+              Dois dias de prática Hands-On para dominar a emergência
             </h2>
             
             {/* Description */}
             <p className="text-xl text-background/80 leading-relaxed max-w-3xl mx-auto mb-12">
-              Imersão presencial intensiva e prática para médicos que querem dominar os momentos 
-              mais críticos do plantão, com preparo técnico, raciocínio rápido e segurança nos procedimentos.
+               Imersão 100% presencial para médicos que
+querem acelerar a performance em emergências críticas, com prática intensiva,
+raciocínio clínico afiado e domínio dos principais procedimentos
             </p>
 
             {/* CTA Button */}
@@ -59,6 +68,39 @@ const HeroSection = () => {
                   </Button>
                 }
               />
+            </div>
+
+            {/* Event Info Cards - Nova Estética */}
+            <div className="flex flex-col sm:flex-row gap-4 max-w-2xl mx-auto">
+              {/* Bloco de Data */}
+              <div className="flex-1 flex items-center gap-4 bg-neutral-900/50 backdrop-blur-md border border-white/10 p-4 rounded-xl hover:bg-neutral-900/70 transition-colors group">
+                <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-red-500/10 text-red-500 group-hover:bg-red-500 group-hover:text-white transition-colors">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <rect width="18" height="18" x="3" y="4" rx="2" ry="2" />
+                    <line x1="16" x2="16" y1="2" y2="6" />
+                    <line x1="8" x2="8" y1="2" y2="6" />
+                    <line x1="3" x2="21" y1="10" y2="10" />
+                  </svg>
+                </div>
+                <div className="flex flex-col items-start text-left">
+                  <span className="text-xs font-bold text-neutral-400 uppercase tracking-wider mb-0.5">Próxima Turma</span>
+                  <span className="text-lg font-bold text-white leading-tight">{eventDate}</span>
+                </div>
+              </div>
+              
+              {/* Bloco de Local */}
+              <div className="flex-1 flex items-center gap-4 bg-neutral-900/50 backdrop-blur-md border border-white/10 p-4 rounded-xl hover:bg-neutral-900/70 transition-colors group">
+                <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-red-500/10 text-red-500 group-hover:bg-red-500 group-hover:text-white transition-colors">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
+                </div>
+                <div className="flex flex-col items-start text-left">
+                  <span className="text-xs font-bold text-neutral-400 uppercase tracking-wider mb-0.5">Localização</span>
+                  <span className="text-lg font-bold text-white leading-tight">{eventCity}</span>
+                </div>
+              </div>
             </div>
           </div>
         </Container>

@@ -7,6 +7,7 @@ import FAQSection from './components/sections/FAQSection';
 import CTASection from './components/sections/CTASection';
 import { Toaster } from './components/ui/sonner';
 import './App.css';
+import LocationSection from './components/sections/LocationSection';
 
 function App() {
   return (

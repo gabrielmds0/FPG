@@ -14,6 +14,10 @@ import { Label } from '@/components/ui/label';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { User, Phone, Mail, UserPlus, Loader2 } from 'lucide-react';
 import { toast } from 'sonner';
+import { useGoogleSheetsFPPG } from '@/hooks/useGoogleSheetsFPPG';
+
+// Link de fallback caso a planilha não tenha o link configurado
+const FALLBACK_CHECKOUT_URL = 'https://clkdmg.site/pay/formacao-paciente-grave';
 
 const LeadFormModal = ({ trigger }) => {
   const [open, setOpen] = useState(false);
@@ -25,6 +29,12 @@ const LeadFormModal = ({ trigger }) => {
     gender: ''
   });
   const [errors, setErrors] = useState({});
+
+  // Busca dados da planilha (incluindo o link de checkout)
+  const { data: sheetData } = useGoogleSheetsFPPG();
+  
+  // Obtém o link de checkout da planilha ou usa o fallback
+  const checkoutUrl = sheetData?.Checkout || FALLBACK_CHECKOUT_URL;
 
   const handleInputChange = (field, value) => {
     setFormData(prev => ({
@@ -104,6 +114,11 @@ const LeadFormModal = ({ trigger }) => {
       }
 
       toast.success('Formulário enviado com sucesso! Entraremos em contato em breve.');
+
+      // Redireciona para o link de checkout da planilha após 2 segundos
+      setTimeout(() => {
+        window.location.href = checkoutUrl;
+      }, 2000);
       
       // Reset form
       setFormData({

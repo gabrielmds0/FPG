@@ -8,7 +8,8 @@ import {
   Coffee,
   FileText,
   GraduationCap,
-  Target
+  Target,
+  BriefcaseMedical  
 } from 'lucide-react';
 import Container from '../common/Container';
 import LeadFormModal from '../common/LeadFormModal';
@@ -40,7 +41,7 @@ const FeaturesSection = () => {
       highlights: ['Protocolo RUSH', 'Acesso venoso guiado', 'Decisões em tempo real']
     },
     {
-      icon: Heart,
+      icon: BriefcaseMedical  ,
       title: 'Estação 3: Ventilação e Suporte Respiratório',
       description: 'Pratique Ventilação Mecânica (VM) e Ventilação Não Invasiva (VNI). Aprenda parâmetros ideais, ajustes conforme quadro clínico e como evitar complicações.',
       iconColor: 'text-green-600',
@@ -48,12 +49,12 @@ const FeaturesSection = () => {
       highlights: ['Ventilação Mecânica', 'Ventilação Não Invasiva', 'Parâmetros ideais']
     },
     {
-      icon: Baby,
-      title: 'Estação 4: Emergências Pediátricas',
-      description: 'Aplique o protocolo PALS na prática com simulações realistas. Reconheça sinais de gravidade, aja com segurança e prescreva condutas específicas para pacientes pediátricos.',
+      icon: Heart,
+      title: 'Estação 4: Revisão ACLS',
+      description: 'Revisão dos protocolos abordados na certificação internacional ACLS, focado em emergências cardiovasculares',
       iconColor: 'text-pink-600',
       bgColor: 'bg-pink-100',
-      highlights: ['Protocolo PALS', 'Simulações realistas', 'Condutas específicas']
+      highlights: ['Protocolo ', 'Abordagem do paciente grave', 'Raciocínio clínico']
     },
     {
       icon: Users,
